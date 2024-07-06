@@ -1,0 +1,162 @@
+@import "../../theme.scss";
+
+.global_search {
+  background-color: $light;
+  border-radius: 15px;
+  width: 95%;
+  height: 85px;
+  padding: 0px 20px;
+
+  .global_search_dropdown {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 100%;
+    padding: 15px 15px 15px 0px;
+    border-right: 2px solid #bfbfbf;
+
+    .category_icon {
+      width: 32px;
+      height: 32px;
+      object-fit: cover;
+
+      @media screen and (max-width: 768px) {
+        width: 22px;
+        height: 22px;
+      }
+
+      @media screen and (max-width: 550px) {
+        width: 17px;
+        height: 17px;
+      }
+    }
+
+    .my_dropdown_styles {
+      border: none !important;
+      outline: none;
+      width: 100%;
+      font-size: 18px;
+      font-weight: 500;
+      margin-left: 10px;
+
+      @media screen and (max-width: 768px) {
+        font-size: 14px;
+        margin-left: 5px;
+      }
+
+      @media screen and (max-width: 500px) {
+        font-size: 10px;
+        margin-left: 0px;
+      }
+    }
+
+    @media screen and (max-width: 998px) {
+      padding: 14px;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 12px;
+      width: 165px;
+    }
+
+    @media screen and (max-width: 500px) {
+      width: 120px;
+      padding: 5px;
+    }
+  }
+
+  .global_search_input_container {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 0px 5px 0px 27px;
+
+    .search_icon {
+      width: 25px;
+      height: 25px;
+      object-fit: cover;
+
+      @media screen and (max-width: 768px) {
+        width: 18px;
+        height: 18px;
+      }
+
+      @media screen and (max-width: 600px) {
+        width: 14px;
+        height: 14px;
+      }
+    }
+
+    .global_search_input {
+      width: 100%;
+      border: none;
+      outline: none;
+      padding-left: 20px;
+      font-size: 18px;
+
+      @media screen and (max-width: 768px) {
+        font-size: 15px;
+        padding-left: 10px;
+      }
+
+      @media screen and (max-width: 500px) {
+        font-size: 12px;
+        padding-left: 5px;
+      }
+    }
+
+    @media screen and (max-width: 998px) {
+      padding: 0px 15px;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 0px 12px;
+    }
+
+    @media screen and (max-width: 500px) {
+      padding: 5px 7px;
+    }
+  }
+
+  @media screen and (max-width: 998px) {
+    height: 70px;
+    width: 100%;
+    padding: 0px 2px;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 70px;
+  }
+
+  @media screen and (max-width: 500px) {
+    height: 55px;
+    border-radius: 7px;
+  }
+}
+
+.global_search_button {
+  background: $orange !important;
+  color: $light !important;
+  border: 1px solid $orange !important;
+  padding: 15px 40px !important;
+  border-radius: 15px !important;
+
+  &:hover {
+    border: 1px solid $orange !important;
+    color: $orange !important;
+    background-color: $light !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px !important;
+    padding: 9px 20px !important;
+    border-radius: 7px !important;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 12px !important;
+    padding: 9px 15px !important;
+  }
+}

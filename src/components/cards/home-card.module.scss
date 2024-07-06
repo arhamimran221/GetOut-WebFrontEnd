@@ -1,0 +1,27 @@
+@import '../../theme.scss';
+
+.home_card {
+    height: 320px;
+    width : 320px;
+    border: 2px solid #F5F6FA;
+    border-radius: 16px;
+
+    .home_card_avatar {
+        display         : block;
+        width           : 120px;
+        height          : 120px;
+        border-radius   : 50%;
+        background-color: rgb(163, 163, 163);
+    }
+
+    >p {
+        font-size: 14px;
+        color    : $default-font-color;
+
+        @media screen and (max-width: 600px) {
+            font-size: 12px;
+
+        }
+    }
+
+}

@@ -1,0 +1,66 @@
+@import "../../theme.scss";
+
+.app_navbar {
+  background-color: $light !important;
+
+  .logo {
+    font-weight: 600;
+    font-size: 36px;
+    @media screen and (max-width: 768px) {
+      font-size: 25px;
+    }
+
+    @media screen and (max-width: 500px) {
+      font-size: 25px;
+    }
+  }
+
+  .navlink_items {
+    text-decoration: none;
+    color: $dark;
+    font-weight: 500;
+
+    &.active {
+      color: $orange;
+    }
+  }
+}
+.nav_bar_login,
+.nav_bar_sigup {
+  border: 1px solid #ff0000;
+  border-radius: 4px;
+  padding: 12px 35px;
+  color: #ff0000;
+  font-weight: 500;
+  font-size: 16px;
+  background-color: transparent;
+}
+// .nav_bar_login:hover {
+//   background-color: #ff0000;
+//   color: white;
+// }
+.nav_bar_sigup {
+  background: #ff0000 !important;
+  color: white !important;
+}
+@media screen and (max-width: 768px) {
+  .nav_bar_sigup,
+  .nav_bar_login {
+    padding: 7px 20px !important;
+    font-size: 14px;
+    height: 37px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .nav_bar_sigup,
+  .nav_bar_login {
+    font-size: 12px !important;
+    padding: 5px 20px !important;
+  }
+}
+
+// .nav_bar_sigup:hover {
+//   border: 1px solid #ff0000;
+//   background-color: transparent !important;
+//   color: #ff0000 !important;
+// }

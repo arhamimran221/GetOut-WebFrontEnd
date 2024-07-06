@@ -1,0 +1,42 @@
+@import "../../../theme.scss";
+
+.primary_button_hollow {
+  border: 1px solid $orange !important;
+  color: $orange !important;
+
+  &:hover {
+    background: $orange !important;
+    color: $light !important;
+    border: 1px solid $orange !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px !important;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 12px !important;
+  }
+}
+
+.primary_button {
+  background: $orange !important;
+  color: $light !important;
+  border: 1px solid $orange !important;
+  padding: 15px 40px !important;
+  border-radius: 15px !important;
+
+  &:hover {
+    border: 1px solid $orange !important;
+    color: $orange !important;
+    background-color: $light !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px !important;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 12px !important;
+  }
+}

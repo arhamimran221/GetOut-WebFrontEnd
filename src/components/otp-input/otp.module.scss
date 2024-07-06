@@ -1,0 +1,27 @@
+.otp_container{
+    // border: 1px solid red;
+    display: flex;
+    div{
+        flex-grow:1;
+        row-gap: 4;
+        text-align: center;
+        input{
+            border: none;
+            outline: 1px solid rgb(173, 164, 164);
+            width: 90%;
+            height: 45px;
+            text-align: center;
+            border-radius: 6px;
+            font-size: 24px;
+        }
+    }
+}
+@media (max-width: 575.98px) { 
+    .otp_container{
+     
+        div{
+           
+            margin-bottom:10px
+        }
+    }
+ }

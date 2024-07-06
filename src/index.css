@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Metrophobic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import './theme.scss';
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-poppin: "Poppins", sans-serif;
+  --orange     : #ff0000;
+  --light-grey : #F5F6FA;
+  --grey       : #c4c2ce;
+  --dark       : #000000;
+  --light      : #ffffff;
+}
+
+.font-poppins{
+  font-family: "Poppins", sans-serif;
+
+}
+.font-raleway{
+  font-family: "Raleway", sans-serif;
+}
+.font-manrope{
+  font-family: "Manrope", sans-serif;
+}
+.font-montserat{
+  font-family: "Montserrat", sans-serif;
+}
+.react-calendar{
+  border: none !important;
+}
+.react-calendar__navigation button{
+  min-height: 21px;
+}
+.react-calendar__navigation__label{
+  font-family: "Poppins",sans-serif;
+}
+.react-calendar__month-view__weekdays__weekday abbr{
+   text-decoration: none;
+}
+.react-calendar__tile--active{
+  background: #ff0000 !important;
+  border-radius: 7px;
+}
+:where(.css-dev-only-do-not-override-17seli4).ant-checkbox-checked .ant-checkbox-inner{
+  background-color: #ff0000 !important;
+  border-color: #ff0000 !important;
+}
+.sub-bg{
+  background-image: url(./Assets/subs-bg.svg);
+  background-repeat: no-repeat;
+  background-position: 90% 8%;
+  cursor: pointer;
+}
+.sub-bg:hover{
+  background-color: #ff0000;
+  transition: ease-in-out 300ms;
+}
+.sub-bg:hover button{
+  color: #ff0000;
+  background-color: #ffffff;
+  transition: ease-in-out 300ms;
+
+}
+.sub-bg:hover p{
+  color: #ffff;
+  transition: ease-in-out 300ms;
+
+}
+.sub-bg:hover div{
+  border-color: #ffff;
+  transition: ease-in-out 300ms;
+
+}
+.sub-bg:hover h2{
+  transition: ease-in-out 300ms;
+
+  color: #ffff;
+}
+.sub-bg:hover h2 span{
+  transition: ease-in-out 300ms;
+
+  color: #ffff;
+}
+.ant-table-thead{
+  border-bottom: 1px solid #0000 !important;
+}
+:where(.css-dev-only-do-not-override-17seli4).ant-select-outlined:not(.ant-select-customize-input) .ant-select-selector{
+  border: 1px solid #9491A1 !important
+
+}
+.ant-table-thead .ant-table-cell {
+  background-color: #ffff !important;
+  border-bottom: 1px solid #8E8E8E !important;
+}
+:where(.css-dev-only-do-not-override-17seli4).ant-table-wrapper .ant-table-thead >tr>th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before, :where(.css-dev-only-do-not-override-17seli4).ant-table-wrapper .ant-table-thead >tr>td:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before{
+  display: none !important;
+}
+.ant-table-cell{
+  width: 260px !important;
+}
+:where(.css-dev-only-do-not-override-17seli4).ant-checkbox{
+  border: 2px solid #858688 !important;
+}
+.ant-table-row ant-table-row-level-0{
+   border: none !important;
+}
+:where(.css-dev-only-do-not-override-17seli4).ant-pagination .ant-pagination-disabled .ant-pagination-item-link, :where(.css-dev-only-do-not-override-17seli4).ant-pagination .ant-pagination-disabled:hover .ant-pagination-item-link{
+  background-color: #FF00001A !important;
+  color: #ff0000 !important;
+  border-radius: 5px !important;
+}
+:where(.css-dev-only-do-not-override-17seli4).ant-pagination .ant-pagination-item-active{
+  background-color: #ff0000 !important;
+  color: #fff !important;
+  border: none !important;
+}
+.ant-pagination-item,.ant-pagination-item-link{
+  background-color: #FF00001A !important;
+  color: #ff0000 !important;
+  border-radius: 5px !important;
+}
+.ant-table-footer{
+  background-color: #ffff !important;
+}
+.ant-modal-title{
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 22px !important;
+  color: #19191A !important;
+  line-height: 24px !important;
+}
+.swiper-wrapper{
+  height: 160px !important;
+}

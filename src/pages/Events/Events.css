@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/metropolis-2');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.event_container{
+    max-width: 1280px;
+    width: 100%;
+    margin: 0px auto;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.font-poppins{
+    font-family: "Poppins", sans-serif;
+}
+
+.font-metropolis{
+    font-family: 'Metropolis', sans-serif;
+
+}
+.eventSlide-bg{
+    background-image: url(/src/assets/SliderImage.png),linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 0.01%, rgba(0, 0, 0, 0) 22%, #000000 94%) !important;
+    background-blend-mode: overlay !important;
+    background-repeat: no-repeat;
+}
+.swiper-button-prev{
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: -10px;
+    font-size: 10px;
+    background: #fff;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    margin-top: -30px;
+}
+.swiper-button-prev::after{
+    font-size: 12px;
+    color: #ff0000;
+
+}
+
+.swiper-button-next{
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-right: -10px;
+    font-size: 10px;
+    background: #fff;
+    border-top-left-radius: 30px;
+    color: #ff0000;
+    border-bottom-left-radius: 30px;
+    margin-top: -30px;
+
+}
+.swiper-button-next::after{
+    font-size: 12px;
+    color: #ff0000;
+}
