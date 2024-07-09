@@ -1,10 +1,5 @@
 import React, { useRef, useState } from "react";
-import Image1 from "../../Assets/CategoryImg1.svg";
-import Image2 from "../../Assets/CategoryImg2.svg";
-import Image3 from "../../Assets/CategoryImg3.svg";
-import Image4 from "../../Assets/CategoryImg4.svg";
-import Image5 from "../../Assets/CategoryImg5.svg";
-import Image6 from "../../Assets/CategoryImg6.svg";
+import location from "../../Assets/edit_location_alt.svg"
 import DownIcom from "../../Assets/arrowdownEvent.svg";
 import { Dropdown, Space, Typography } from "antd";
 import MapIcon from "../../Assets/MapIcon.svg";
@@ -26,6 +21,7 @@ import arrowLeftEvent from "../../Assets/leftIconEvent.svg";
 import arrowLeft from "../../Assets/arrowLeft.svg";
 import arrowRightEvent from "../../Assets/RightIconEvent.svg";
 import arrowRight from "../../Assets/arrowRight.svg";
+import todayIcon from "../../Assets/todayIcon.svg"
 
 const Events = () => {
   const [selectedCat, setSelectedCat] = useState(null);
@@ -54,88 +50,78 @@ const Events = () => {
   const eventCategory = [
     {
       id: 0,
-      heading: "Category Title",
+      heading: "Get",
       descrip:
-        "Lorem Ipsum is simply dummy data text of the printing and types-",
-      cat_image: Image1,
+        "Live music, theatre, live sports, comedy nights, cinema...",
+      cat_image: CardsImage,
+      span_color: "#FF0000",
+      span_title: "Entertained"
     },
     {
       id: 1,
-      heading: "Category Title",
+      heading: "Get",
       descrip:
-        "Lorem Ipsum is simply dummy data text of the printing and types-",
-      cat_image: Image2,
+        "Live music, theatre, live sports, comedy nights, cinema...",
+      cat_image: CardsImage,
+      span_color: "#FF0000",
+      span_title: "Entertained"
     },
     {
       id: 2,
-      heading: "Category Title",
+      heading: "Get",
       descrip:
-        "Lorem Ipsum is simply dummy data text of the printing and types-",
-      cat_image: Image3,
+        "Live music, theatre, live sports, comedy nights, cinema...",
+      cat_image: CardsImage,
+      span_color: "#FF0000",
+      span_title: "Entertained"
     },
     {
       id: 3,
-      heading: "Category Title",
+      heading: "Get",
       descrip:
-        "Lorem Ipsum is simply dummy data text of the printing and types-",
-      cat_image: Image4,
+        "Live music, theatre, live sports, comedy nights, cinema...",
+      cat_image: CardsImage,
+      span_color: "#FF0000",
+      span_title: "Entertained"
     },
     {
       id: 4,
-      heading: "Category Title",
+      heading: "Get",
       descrip:
-        "Lorem Ipsum is simply dummy data text of the printing and types-",
-      cat_image: Image5,
+        "Live music, theatre, live sports, comedy nights, cinema...",
+      cat_image: CardsImage,
+      span_color: "#FF0000",
+      span_title: "Entertained"
     },
     {
       id: 5,
-      heading: "Category Title",
+      heading: "Get",
       descrip:
-        "Lorem Ipsum is simply dummy data text of the printing and types-",
-      cat_image: Image6,
+        "Live music, theatre, live sports, comedy nights, cinema...",
+      cat_image: CardsImage,
+      span_color: "#FF0000",
+      span_title: "Entertained"
     },
     {
       id: 6,
-      heading: "Category Title",
+      heading: "Get",
       descrip:
-        "Lorem Ipsum is simply dummy data text of the printing and types-",
-      cat_image: Image3,
+        "Live music, theatre, live sports, comedy nights, cinema...",
+      cat_image: CardsImage,
+      span_color: "#FF0000",
+      span_title: "Entertained"
     },
     {
       id: 7,
-      heading: "Category Title",
+      heading: "Get",
       descrip:
-        "Lorem Ipsum is simply dummy data text of the printing and types-",
-      cat_image: Image3,
+        "Live music, theatre, live sports, comedy nights, cinema...",
+      cat_image: CardsImage,
+      span_color: "#FF0000",
+      span_title: "Entertained"
     },
-    {
-      id: 8,
-      heading: "Category Title",
-      descrip:
-        "Lorem Ipsum is simply dummy data text of the printing and types-",
-      cat_image: Image3,
-    },
-    {
-      id: 9,
-      heading: "Category Title",
-      descrip:
-        "Lorem Ipsum is simply dummy data text of the printing and types-",
-      cat_image: Image3,
-    },
-    {
-      id: 10,
-      heading: "Category Title",
-      descrip:
-        "Lorem Ipsum is simply dummy data text of the printing and types-",
-      cat_image: Image3,
-    },
-    {
-      id: 11,
-      heading: "Category Title",
-      descrip:
-        "Lorem Ipsum is simply dummy data text of the printing and types-",
-      cat_image: Image3,
-    },
+
+
   ];
 
   const handleCategoryClick = (id, cat_image) => {
@@ -203,49 +189,36 @@ const Events = () => {
             isHost || selectedCat ? "my-[0px]" : "my-[100px]"
           } items-start1`}
         >
-          <div className="w-[26%] bg-[#F9F9F9] px-[6px] py-[4px] rounded-lg border-[1px] border-[#E4E4E4] h-fit	 ">
-            <h2 className="font-poppins font-[600] text-[18px] leading-[24px]">
-              Categories
+          <div className="w-[26%] bg-[#F5F5F5] px-[10px] py-[10px] rounded-lg h-fit	 ">
+            <h2 className="font-inter font-[600] text-[18px] leading-[24px]">
+              Contents
             </h2>
-            <hr className="my-[10px] border-[#8E8E8E]" />
+            <p className="text-[#828282] font-inter text-[14px] leading-[21px] font-[400]">Filter your results by category</p>
             {/* className={`overflow-y-auto ${showAll ? '' : 'max-h-[745px]'}`} */}
             <div>
               {eventCategory
-                .slice(
-                  0,
-                  showAll ? eventCategory.length : initialVisibleCategories
-                )
                 .map((cat, ind) => (
                   <div key={ind}>
                     <EventsCategory
                       title={cat.heading}
                       descrip={cat.descrip}
                       cat_image={cat.cat_image}
+                      span_color={cat.span_color}
+                      span_title={cat.span_title}
                       onClick={() => handleCategoryClick(cat.id, cat.cat_image)}
                     />
                   </div>
                 ))}
             </div>
-            <div className="w-[100%] flex justify-center p-[11px]">
-              {/* onClick={toggleShowAll} */}
-              <a href="#">
-                <button className="text-[#ff0000] font-poppins text-[14px]">
-                  {showAll ? "Show less" : "Show all"}
-                </button>
-              </a>
-            </div>
           </div>
           <div className="w-[74%] ">
             {!isHost && !selectedCat && (
-              <div className="flex w-[100%] gap-[10px] bg-[#F9F9F9] border-[1px] border-[#E4E4E4] rounded-lg px-4 py-2">
-                <div className="bg-[#fff] px-4 rounded-lg w-[50%] flex py-2">
+              <div className="flex w-[100%] gap-[10px] bg-[#F5F5F5]  rounded-lg px-3 py-2">
+                <div className="bg-[#fff] px-3 rounded-lg w-[40%] flex py-2">
                   <div className="flex justify-between items-center w-[100%]">
                     <div className="w-[65%] flex justify-between items-center">
-                      <p className="font-poppins font-[500] text-[14px] text-[#19191A]">
-                        Location
-                      </p>
-                      <p className="font-poppins font-[400] text-[12px] text-[#19191A]">
-                        clear
+                      <p className="font-inter font-[400] text-[14px] text-[#828282] leading-[24px] flex items-center gap-[10px]">
+                        <img src={location} alt="" srcset="" width={14}/>Location
                       </p>
                     </div>
                     <div className="border-[1px] border-[#E4E4E4] w-[1px] h-[100%]"></div>
@@ -259,29 +232,35 @@ const Events = () => {
                       >
                         <div className="">
                           <Space className="flex items-center justify-between cursor-pointer">
-                            <div className="font-poppins font-[500] text-[14px] text-[#19191A]">
-                              +x.x miles
+                          <div className="font-inter font-[400] text-[14px] text-[#828282] leading-[24px]">
+                          Radius
                             </div>
-                            <img src={DownIcom} width={15} />
+                            <img src={DownIcom} width={10} />
                           </Space>
                         </div>
                       </Dropdown>
                     </div>
                   </div>
                 </div>
-                <div className="flex w-[40%] gap-[10px] items-center">
+                <div className="flex w-[70%] gap-[10px] items-center">
                   <button
-                    className="w-[30%] flex w-[100%] items-center justify-center gap-[5px] font-poppins text-[#19191A] text-[12px]"
+                    className="w-[30%] flex items-center justify-center gap-[10px] font-inter font-[300] text-[#000] text-[16px]"
                     onClick={() => setMapView(true)}
                   >
                     <img src={MapIcon} alt="" />
                     Map View
                   </button>
-                  <button className="w-[30%] flex w-[100%] items-center justify-center gap-[5px] font-poppins text-[#19191A] text-[12px]">
+                  <button
+                    className="w-[30%] flex  items-center justify-center gap-[10px] font-inter font-[300] text-[#000] text-[16px]"
+                  >
+                    <img src={todayIcon} alt="" />
+                    Today
+                  </button>
+                  <button className="w-[30%] flex  items-center justify-center gap-[10px] font-inter font-[300] text-[#000] text-[16px]">
                     <img src={DateIcon} alt="" />
                     Find Date
                   </button>
-                  <button className="w-[34%] flex w-[100%] items-center justify-center gap-[5px] font-poppins text-[#19191A] text-[12px]">
+                  <button className="w-[34%] flex  items-center justify-center gap-[10px] font-inter font-[300] text-[#000] text-[16px]">
                     <img src={SkipIcon} alt="" />
                     Skip 5 days
                   </button>
@@ -319,40 +298,37 @@ const Events = () => {
             ) : (
              
               <div
-                className="mt-[10px]  gap-[10px] flex flex-col h-[510px] flex-wrap overflow-x-hidden"
+                className="mt-[10px]  gap-[10px] flex flex-col h-[610px] flex-wrap overflow-x-hidden"
                 ref={scrollContainerRef}
               >
-                <div className="font-poppins text-[16px] font-[600] flex justify-between text-[#19191A] w-[33.32%]">
+                <div className="font-inter text-[16px] font-[500] flex justify-between text-[#000] w-[33.32%] mt-[25px]">
                   <h2>06 Apr 2024</h2>
-                  <p>Monday</p>
+                  <p className="text-[#D9D9D9] font-[700]">Monday</p>
                 </div>
-                <hr className="my-[4px] border-[0.5px] border-[#8E8E8E]" />
+                <hr className="mb-[4px] border-[5px] border-[#D9D9D9]" />
                 <EventsData
                   image_url={CardsImage}
-                  money={true}
                   title="Category Title"
                 />
                 <EventsData
                   image_url={CardsImage}
-                  money={true}
                   title="Category Title"
                 />
                 <EventsData
                   image_url={CardsImage}
-                  money={true}
                   title="Category Title"
                 />
-                <div className="font-poppins text-[16px] font-[600] flex justify-between text-[#19191A]">
-                  <h2>07 Apr 2024</h2>
-                  <p>Tuesday</p>
+                <div className="font-inter text-[16px] font-[500] flex justify-between text-[#000] w-[33.32%] mt-[25px]">
+                  <h2>06 Apr 2024</h2>
+                  <p className="text-[#D9D9D9] font-[700]">Monday</p>
                 </div>
+                <hr className="mb-[4px] border-[5px] border-[#D9D9D9]" />
                 <EventsData image_url={CardsImage} title="Category Title" />
                 <EventsData image_url={CardsImage} title="Category Title" />
 
                 <EventsData image_url={CardsImage} title="Category Title" />
                 <EventsData
                   image_url={CardsImage}
-                  money={true}
                   title="Category Title"
                 />
                 <EventsData image_url={CardsImage} title="Category Title" />
@@ -360,18 +336,20 @@ const Events = () => {
                 <EventsData image_url={CardsImage} title="Category Title" />
 
                 <EventsData image_url={CardsImage} title="Category Title" />
-                <div className="font-poppins text-[16px] font-[600] flex justify-between text-[#19191A]">
-                  <h2>09 Apr 2024</h2>
-                  <p>Thursday</p>
-                </div>
-                <EventsData image_url={CardsImage} title="Category Title" />
-                <EventsData image_url={CardsImage} title="Category Title" />
-                <EventsData image_url={CardsImage} title="Category Title" />
-                <EventsData image_url={CardsImage} title="Category Title" />
-                <div className="font-poppins text-[16px] font-[600] flex justify-between text-[#19191A] w-[33.32%]">
+                <div className="font-inter text-[16px] font-[500] flex justify-between text-[#000] w-[33.32%] mt-[25px]">
                   <h2>06 Apr 2024</h2>
-                  <p>Monday</p>
+                  <p className="text-[#D9D9D9] font-[700]">Monday</p>
                 </div>
+                <hr className="mb-[4px] border-[5px] border-[#D9D9D9]" />
+                <EventsData image_url={CardsImage} title="Category Title" />
+                <EventsData image_url={CardsImage} title="Category Title" />
+                <EventsData image_url={CardsImage} title="Category Title" />
+                <EventsData image_url={CardsImage} title="Category Title" />
+                <div className="font-inter text-[16px] font-[500] flex justify-between text-[#000] w-[33.32%] mt-[25px]">
+                  <h2>06 Apr 2024</h2>
+                  <p className="text-[#D9D9D9] font-[700]">Monday</p>
+                </div>
+                <hr className="mb-[4px] border-[5px] border-[#D9D9D9]" />
                 <EventsData image_url={CardsImage} title="Category Title" />
                 <EventsData image_url={CardsImage} title="Category Title" />
                 <EventsData image_url={CardsImage} title="Category Title" />
@@ -389,48 +367,3 @@ const Events = () => {
 };
 
 export default Events;
-
-// <div className="mt-[20px] flex w-[100%] gap-[10px] overflow-x-auto">
-//   <div className="w-[33%]">
-//     <div className="font-poppins text-[16px] font-[600]  flex justify-between text-[#19191A]">
-//       <h2>06 Apr 2024</h2>
-//       <p>Monday</p>
-//     </div>
-//     <hr className="my-[10px] border-[0.5px] border-[#8E8E8E]" />
-//     <EventsData image_url={CardsImage} money={true} title="Category Title"/>
-//     <EventsData image_url={CardsImage} title="Category Title"/>
-//     <EventsData image_url={CardsImage} title="Category Title"/>
-//     <EventsData image_url={CardsImage} money={true} title="Category Title"/>
-//     <EventsData image_url={CardsImage} money={true} title="Category Title"/>
-//     <EventsSlider />
-//   </div>
-//   <div className="w-[33%]">
-//     <EventsData image_url={CardsImage} title="Category Title"/>
-//     <EventsData image_url={CardsImage} money={true} title="Category Title"/>
-//     <EventsData image_url={CardsImage} title="Category Title"/>
-//     <EventsData image_url={CardsImage} title="Category Title"/>
-//     <div className="font-poppins text-[18px] font-[600]  leading-[24px] flex justify-between text-[#19191A] mt-[9px]">
-//       <h2>30 Apr 2024</h2>
-//       <p>Monday</p>
-//     </div>
-//     <hr className="my-[6px] border-[0.5px] border-[#8E8E8E]" />
-//     <EventsData image_url={CardsImage} title="Category Title"/>
-//     <EventsData image_url={CardsImage} title="Category Title"/>
-//     {/* <EventsData image_url={CardsImage} title="Category Title"/> */}
-//     <EventsData image_url={CardsImage} money={true} title="Category Title"/>
-//   </div>
-//   <div className="w-[33%]">
-//     <EventsData image_url={CardsImage} title="Category Title"/>
-//     <EventsData image_url={CardsImage} title="Category Title"/>
-//     <EventsSlider />
-
-//     <EventsData image_url={CardsImage} title="Category Title"/>
-//     <div className="font-poppins text-[18px] font-[600]  leading-[24px] flex justify-between text-[#19191A]">
-//       <h2>30 Apr 2024</h2>
-//       <p>Monday</p>
-//     </div>
-//     <hr className="my-[10px] border-[0.5px] border-[#8E8E8E]" />
-//     <EventsData image_url={CardsImage} title="Category Title"/>
-//     <EventsData image_url={CardsImage} title="Category Title"/>
-//   </div>
-// </div>

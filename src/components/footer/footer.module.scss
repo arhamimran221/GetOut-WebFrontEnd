@@ -1,7 +1,7 @@
 @import "../../theme.scss";
 
 .banner {
-  background-color: black;
+  background-color: #ff0000;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -15,8 +15,8 @@
 
   .hero_content {
     // height: 400px;
-    color: white;
-
+    color: #000;
+    font-family: "Inter", sans-serif;
     text-align: left;
     margin-top: 40px;
 

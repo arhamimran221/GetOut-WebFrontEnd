@@ -5,7 +5,6 @@ import SideBarNavigation from "./SideBarNavigation";
 import { Link } from 'react-router-dom';
 
 const MainpageLayout = ({role, children}) => {
-  console.log(role)
 
   return (
     <div className="container mx-auto">

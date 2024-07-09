@@ -45,7 +45,7 @@ const RouterComponent = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />}/>
-        <Route path="/events" element={<Events />}/>
+        <Route path="/directory" element={<Events />}/>
         <Route path="/saved-events" element={<SavedEvents />}/>
         <Route
           path="/events-dashboard"
