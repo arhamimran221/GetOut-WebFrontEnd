@@ -18,6 +18,10 @@ import SuDashboard from "../components/SuDashboard/SuDashboard";
 import HostManage from "../components/HostManage/HostManage";
 import EventManage from "../components/EventManage/EventManage";
 import SavedEvents from "../pages/SavedEvents/SavedEvents";
+import Search from "../pages/Search/Search";
+import EventsDetails from "../pages/DetailPages/EventDetails";
+import HostDetails from "../pages/DetailPages/HostDetails";
+import AboutUs from "../pages/AboutUs/AboutUs";
 
 const authContent = [
   {
@@ -47,6 +51,10 @@ const RouterComponent = () => {
         <Route path="/" element={<HomePage />}/>
         <Route path="/directory" element={<Events />}/>
         <Route path="/saved-events" element={<SavedEvents />}/>
+        <Route path="/search" element={<Search />}/>
+        <Route path="/event-details" element={<EventsDetails />}/>
+        <Route path="/host-details" element={<HostDetails />}/>
+        <Route path="/about-us" element={<AboutUs />}/>
         <Route
           path="/events-dashboard"
           element={

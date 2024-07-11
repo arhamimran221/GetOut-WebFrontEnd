@@ -17,6 +17,7 @@ import tick from "../../Assets/tickicon.svg";
 import UpcommingEvents from "../../components/UpcommingEvents/UpcommingEvents";
 import upcoming from "../../Assets/upcommingEvent.png";
 const Host = (props) => {
+  
   return (
     <div className="flex gap-[24px] pl-[10px]">
       <div className="w-[20%]">

@@ -12,11 +12,7 @@ import EventsSlider from "./EventsSlider";
 import EventsCategory from "./EventsCategory";
 import PageLayout from "../layouts/page-layout";
 import "./Events.css";
-import EventsDetails from "./EventsDetails";
 import Host from "./Host";
-import write from "../../Assets/WriteIcon.svg";
-import { ArrowBack } from "@mui/icons-material";
-import Back from "../../Assets/backIcon.svg";
 import arrowLeftEvent from "../../Assets/leftIconEvent.svg";
 import arrowLeft from "../../Assets/arrowLeft.svg";
 import arrowRightEvent from "../../Assets/RightIconEvent.svg";
@@ -157,37 +153,8 @@ const Events = () => {
   return (
     <PageLayout>
       <div className="container ">
-        {(isHost || selectedCat) && (
-          <div className="bg-[#F9F9F9] rounded-lg border-[1px] border-[#E4E4E4] px-4 py-2 w-[96.5%] mt-[100px] mx-4 flex gap-[10px] mb-[10px]">
-            <div className="w-[25%] flex justify-between items-center">
-              <div className="">
-                <h4 className="font-poppins text-[#19191A] font-[600] text-[16px]">
-                  South Kensigton{" "}
-                </h4>
-                <p className="font-poppins text-[#767C8C] font-[500] text-[14px] mt-[5px]">
-                  0.7 ml{" "}
-                </p>
-              </div>
-              <div>
-                <img src={write} alt="" width={30} />
-              </div>
-            </div>
-            <div className="border-[1px] border-[#E4E4E4] h-[60px]"></div>
-            <div className="w-[75%] flex justify-between items-center">
-              <div>
-                <img src={Back} alt="" width={30} />
-              </div>
-              <div className="flex gap-[10px]">
-                <img src={arrowLeft} alt="" onClick={scrollHorizontallyLeft}  className="cursor-pointer  hover:scale-[1.2] ease-in-out duration-300"/>
-                <img src={arrowRight} alt="" onClick={scrollHorizontallyRight} className="cursor-pointer  hover:scale-[1.2] ease-in-out duration-300"/>
-              </div>
-            </div>
-          </div>
-        )}
         <div
-          className={`flex w-[100%] px-4 py-2 gap-[10px] ${
-            isHost || selectedCat ? "my-[0px]" : "my-[100px]"
-          } items-start1`}
+          className={`flex w-[100%] px-4 py-2 gap-[10px] my-[100px] items-start`}
         >
           <div className="w-[26%] bg-[#F5F5F5] px-[10px] py-[10px] rounded-lg h-fit	 ">
             <h2 className="font-inter font-[600] text-[18px] leading-[24px]">
@@ -205,14 +172,12 @@ const Events = () => {
                       cat_image={cat.cat_image}
                       span_color={cat.span_color}
                       span_title={cat.span_title}
-                      onClick={() => handleCategoryClick(cat.id, cat.cat_image)}
                     />
                   </div>
                 ))}
             </div>
           </div>
           <div className="w-[74%] ">
-            {!isHost && !selectedCat && (
               <div className="flex w-[100%] gap-[10px] bg-[#F5F5F5]  rounded-lg px-3 py-2">
                 <div className="bg-[#fff] px-3 rounded-lg w-[40%] flex py-2">
                   <div className="flex justify-between items-center w-[100%]">
@@ -270,15 +235,7 @@ const Events = () => {
                   <img src={arrowRightEvent} alt="" onClick={scrollHorizontallyRight} className="cursor-pointer h-[20px] w-[10px] hover:scale-[1.2] ease-in-out duration-300"/>
                 </div>
               </div>
-            )}
-            {selectedCat ? (
-              <EventsDetails
-                selectedCat={selectedCat}
-                handleHostClick={handleHostClick}
-              />
-            ) : isHost ? (
-              <Host />
-            ) : mapView ? (
+           {mapView ? (
               <>
                 <div className="mt-[20px] rounded-lg">
                   <iframe
@@ -308,55 +265,54 @@ const Events = () => {
                 <hr className="mb-[4px] border-[5px] border-[#D9D9D9]" />
                 <EventsData
                   image_url={CardsImage}
-                  title="Category Title"
+                  title="Event Title"
                 />
                 <EventsData
                   image_url={CardsImage}
-                  title="Category Title"
+                  title="Event Title"
                 />
                 <EventsData
                   image_url={CardsImage}
-                  title="Category Title"
+                  title="Event Title"
                 />
                 <div className="font-inter text-[16px] font-[500] flex justify-between text-[#000] w-[33.32%] mt-[25px]">
                   <h2>06 Apr 2024</h2>
                   <p className="text-[#D9D9D9] font-[700]">Monday</p>
                 </div>
                 <hr className="mb-[4px] border-[5px] border-[#D9D9D9]" />
-                <EventsData image_url={CardsImage} title="Category Title" />
-                <EventsData image_url={CardsImage} title="Category Title" />
-
-                <EventsData image_url={CardsImage} title="Category Title" />
+                <EventsData image_url={CardsImage} title="Event Title" />
+                <EventsData image_url={CardsImage} title="Event Title" />
+                <EventsData image_url={CardsImage} title="Event Title" />
                 <EventsData
                   image_url={CardsImage}
-                  title="Category Title"
+                  title="Event Title"
                 />
-                <EventsData image_url={CardsImage} title="Category Title" />
+                <EventsData image_url={CardsImage} title="Event Title" />
                 <EventsSlider />
-                <EventsData image_url={CardsImage} title="Category Title" />
+                <EventsData image_url={CardsImage} title="Event Title" />
 
-                <EventsData image_url={CardsImage} title="Category Title" />
+                <EventsData image_url={CardsImage} title="Event Title" />
                 <div className="font-inter text-[16px] font-[500] flex justify-between text-[#000] w-[33.32%] mt-[25px]">
                   <h2>06 Apr 2024</h2>
                   <p className="text-[#D9D9D9] font-[700]">Monday</p>
                 </div>
                 <hr className="mb-[4px] border-[5px] border-[#D9D9D9]" />
-                <EventsData image_url={CardsImage} title="Category Title" />
-                <EventsData image_url={CardsImage} title="Category Title" />
-                <EventsData image_url={CardsImage} title="Category Title" />
-                <EventsData image_url={CardsImage} title="Category Title" />
+                <EventsData image_url={CardsImage} title="Event Title" />
+                <EventsData image_url={CardsImage} title="Event Title" />
+                <EventsData image_url={CardsImage} title="Event Title" />
+                <EventsData image_url={CardsImage} title="Event Title" />
                 <div className="font-inter text-[16px] font-[500] flex justify-between text-[#000] w-[33.32%] mt-[25px]">
                   <h2>06 Apr 2024</h2>
                   <p className="text-[#D9D9D9] font-[700]">Monday</p>
                 </div>
                 <hr className="mb-[4px] border-[5px] border-[#D9D9D9]" />
-                <EventsData image_url={CardsImage} title="Category Title" />
-                <EventsData image_url={CardsImage} title="Category Title" />
-                <EventsData image_url={CardsImage} title="Category Title" />
-                <EventsData image_url={CardsImage} title="Category Title" />
-                <EventsData image_url={CardsImage} title="Category Title" />
-                <EventsData image_url={CardsImage} title="Category Title" />
-                <EventsData image_url={CardsImage} title="Category Title" />
+                <EventsData image_url={CardsImage} title="Event Title" />
+                <EventsData image_url={CardsImage} title="Event Title" />
+                <EventsData image_url={CardsImage} title="Event Title" />
+                <EventsData image_url={CardsImage} title="Event Title" />
+                <EventsData image_url={CardsImage} title="Event Title" />
+                <EventsData image_url={CardsImage} title="Event Title" />
+                <EventsData image_url={CardsImage} title="Event Title" />
               </div>
             )}
           </div>

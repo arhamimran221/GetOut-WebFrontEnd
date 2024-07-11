@@ -6,16 +6,16 @@ const Navbar = () => {
    const location = useLocation();
    const navigate = useNavigate();
   return (
-    <div className='fixed top-0 left-0 right-0 bg-[#fff] z-[9999] ' style={{boxShadow:'0px 4px 4px 0px #00000026'}}>
+    <div className='fixed top-0 left-0 right-0 bg-[#fff] z-[9999] border-b-[3px] border-b-[#F5F5F5]' >
       <div className="flex justify-between items-end px-4 w-[100%] container py-[20px]">
         <div className="flex gap-[50px] items-center w-[30%] justify-center pb-[5px]">
           <Link to="/directory" className={location.pathname ==="/directory" ? 'font-poppins text-[#ff0000] leading-[16px] text-[16px] font-[500]' : 'font-poppins text-[#000] leading-[16px] text-[16px] font-[500] hover:text-[#ff0000] ease-in-out duration-300'}>
             Directory
           </Link>
-          <Link to="/host-protocol" className={location.pathname ==="/host-protocol" ? 'font-poppins text-[#ff0000] leading-[16px] text-[16px] font-[500]' : 'font-poppins text-[#000] leading-[16px] text-[16px] font-[500] hover:text-[#ff0000] ease-in-out duration-300'}>
+          <Link to="/search" className={location.pathname ==="/search" ? 'font-poppins text-[#ff0000] leading-[16px] text-[16px] font-[500]' : 'font-poppins text-[#000] leading-[16px] text-[16px] font-[500] hover:text-[#ff0000] ease-in-out duration-300'}>
             Search
           </Link>
-          <Link to="/my-account" className={location.pathname ==="/my-account" ? 'font-poppins text-[#ff0000] leading-[16px] text-[16px] font-[500]' : 'font-poppins text-[#000] leading-[16px] text-[16px] font-[500] hover:text-[#ff0000] ease-in-out duration-300'}>
+          <Link to="/about-us" className={location.pathname ==="/about-us" ? 'font-poppins text-[#ff0000] leading-[16px] text-[16px] font-[500]' : 'font-poppins text-[#000] leading-[16px] text-[16px] font-[500] hover:text-[#ff0000] ease-in-out duration-300'}>
             About
           </Link>
         </div>

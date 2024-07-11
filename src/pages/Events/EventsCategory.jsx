@@ -2,7 +2,7 @@ import React from 'react'
 
 const EventsCategory = (props) => {
   return (
-    <div className="w-[100%] " onClick={props.onClick}>
+    <div className="w-[100%] ">
     <div className="flex w-[300px] h-[67px] gap-[5px] items-center my-[9px] last:mb-0 cursor-pointer border-[2px] border-[#F5F5F5] hover:border-[2px] hover:border-[#ff0000] rounded-[8px] overflow-hidden">
       <div className="w-[22%] h-[100%]">
       <img src={props.cat_image} className="w-[100%] h-[100%] object-cover"/>
