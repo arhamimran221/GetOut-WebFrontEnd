@@ -5,7 +5,6 @@ import LoginPage from "../pages/auth/login-page";
 import SignupPage from "../pages/auth/signup-page";
 import OtpPage from "../pages/auth/otp-page";
 import ResetPasswordPage from "../pages/auth/reset-password-page";
-import AuthLayout from "../components/auth-layout/auth-layout";
 import Events from "../pages/Events/Events";
 import MainpageLayout from "../components/MainPage/MainpageLayout";
 import Dasboard from "../components/Dasboard/Dasboard";
@@ -22,29 +21,10 @@ import Search from "../pages/Search/Search";
 import EventsDetails from "../pages/DetailPages/EventDetails";
 import HostDetails from "../pages/DetailPages/HostDetails";
 import AboutUs from "../pages/AboutUs/AboutUs";
-
-const authContent = [
-  {
-    title: "Welcome Back!",
-    desc: "We are glad to see you again! Get access to your Orders, Wishlist and Recommendations.",
-  },
-  {
-    title: "Looks like you're new here!!",
-    desc: "Join our group in few minutes! Sign up with your details to get started",
-  },
-  {
-    title: "Don't worry,",
-    desc: "We are here help you to recover your password.",
-  },
-  {
-    title: "We care about your account Security.",
-    desc: "We are here help you to recover your password. ",
-  },
-];
+import Notifications from "../pages/Notifications/Notifications";
 
 const RouterComponent = () => {
-  const [role, setRole] = useState("admin");
-
+  
   return (
     <BrowserRouter>
       <Routes>
@@ -56,9 +36,9 @@ const RouterComponent = () => {
         <Route path="/host-details" element={<HostDetails />}/>
         <Route path="/about-us" element={<AboutUs />}/>
         <Route
-          path="/events-dashboard"
+          path="/host-protocol"
           element={
-            <ProtectedRoute role={role} allowedRole="admin">
+            <ProtectedRoute allowedRole="role">
               <MainpageLayout>
                 <Dasboard />
               </MainpageLayout>
@@ -66,10 +46,20 @@ const RouterComponent = () => {
           }
         />
         <Route
+          path="/host-protocol/notification"
+          element={
+            <ProtectedRoute allowedRole="role">
+              <MainpageLayout>
+                <Notifications />
+              </MainpageLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
           path="/dashboard"
           element={
-            <ProtectedRoute role={role} allowedRole="superAdmin">
-              <MainpageLayout role={role}>
+            <ProtectedRoute allowedRole="superAdmin">
+              <MainpageLayout>
                 <SuDashboard />
               </MainpageLayout>
             </ProtectedRoute>
@@ -78,8 +68,8 @@ const RouterComponent = () => {
         <Route
           path="/dashboard/host-manage"
           element={
-            <ProtectedRoute role={role} allowedRole="superAdmin">
-              <MainpageLayout role={role}>
+            <ProtectedRoute allowedRole="superAdmin">
+              <MainpageLayout>
                 <HostManage />
               </MainpageLayout>
             </ProtectedRoute>
@@ -88,83 +78,75 @@ const RouterComponent = () => {
         <Route
           path="/dashboard/manage-events"
           element={
-            <ProtectedRoute role={role} allowedRole="superAdmin">
-              <MainpageLayout role={role}>
+            <ProtectedRoute allowedRole="superAdmin">
+              <MainpageLayout>
                 <EventManage />
               </MainpageLayout>
             </ProtectedRoute>
           }
         />
         <Route
-          path="/events-dashboard/create-event"
+          path="/host-protocol/create-event"
           element={
-            <ProtectedRoute role={role} allowedRole="admin">
-              <MainpageLayout role={role ? role : "admin"}>
+            <ProtectedRoute allowedRole="role">
+              <MainpageLayout>
                 <CreateEvent />
               </MainpageLayout>
             </ProtectedRoute>
           }
         />
         <Route
-          path="/events-dashboard/manage-events"
+          path="/host-protocol/manage-events"
           element={
-            <ProtectedRoute role={role} allowedRole="admin">
-              <MainpageLayout role={role ? role : "admin"}>
+            <ProtectedRoute allowedRole="role">
+              <MainpageLayout>
                 <ManageEvent />
               </MainpageLayout>
             </ProtectedRoute>
           }
         />
         <Route
-          path="/events-dashboard/profile-settings"
+          path="/host-protocol/profile-settings"
           element={
-            <ProtectedRoute role={role} allowedRole="admin">
-              <MainpageLayout role={role ? role : "admin"}>
+            <ProtectedRoute allowedRole="role">
+              <MainpageLayout>
                 <AccountSettings />
               </MainpageLayout>
             </ProtectedRoute>
           }
         />
         <Route
-          path="/events-dashboard/subscription"
+          path="/host-protocol/subscription"
           element={
-            <ProtectedRoute role={role} allowedRole="admin">
-              <MainpageLayout role={role ? role : "admin"}>
+            <ProtectedRoute allowedRole="role">
+              <MainpageLayout>
                 <Subscription />
               </MainpageLayout>
             </ProtectedRoute>
           }
         />
         <Route
-          path="/login"
+          path="/login-host"
           element={
-            <AuthLayout content={authContent[0]}>
               <LoginPage />
-            </AuthLayout>
           }
         />
         <Route
           path="/signup"
           element={
-            <AuthLayout content={authContent[1]}>
-              <SignupPage setRole={setRole} />
-            </AuthLayout>
+              <SignupPage />
           }
         />
         <Route
           path="/otp-verify"
           element={
-            <AuthLayout content={authContent[2]}>
               <OtpPage />
-            </AuthLayout>
           }
         />
         <Route
           path="/reset-password"
           element={
-            <AuthLayout content={authContent[3]}>
               <ResetPasswordPage />
-            </AuthLayout>
           }
         />
       </Routes>

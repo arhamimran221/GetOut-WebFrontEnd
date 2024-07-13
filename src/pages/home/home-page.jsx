@@ -83,7 +83,7 @@ const HomePage = () => {
         navigation={false}
         modules={[Autoplay, Pagination, Navigation]}
         className="pt-[50px] bg-[#fff]"
-        slidesPerView={3}
+        slidesPerView={3.5}
         breakpoints={{
           200: {
             slidesPerView: 1,

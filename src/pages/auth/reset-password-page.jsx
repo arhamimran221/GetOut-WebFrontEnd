@@ -45,7 +45,7 @@ with your account.</p>
      
      
       <div className='text-center mt-3'>
-            <span className={`${styles.span}`}>Return to <Link to="/login" className={`${styles.forgot_password2}`}> LOG IN</Link></span>
+            <span className={`${styles.span}`}>Return to <Link to="/login-host" className={`${styles.forgot_password2}`}> LOG IN</Link></span>
          </div>
     </div>
   )

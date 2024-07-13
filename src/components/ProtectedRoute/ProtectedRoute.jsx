@@ -1,9 +1,11 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 
-const ProtectedRoute = ({ role, allowedRole, children }) => {
+const ProtectedRoute = ({allowedRole, children }) => {
+  const role = localStorage.getItem("role");
+
   if (role !== allowedRole) {
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/login-host" replace />;
   }
 
   return children;

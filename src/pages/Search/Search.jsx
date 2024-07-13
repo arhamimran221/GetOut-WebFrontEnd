@@ -77,9 +77,9 @@ const Search = () => {
         </form>
         <div className={searchPerformed ? "mt-[20px]" : "mt-[20px] mb-[300px]"}>
           {searchPerformed && (
-            <div className=" w-[25%] m-auto mb-[50px]">
+            <div className=" mb-[50px]">
               {searchTerm.toLowerCase() === "event" ? (
-                <>
+                <div className="w-[26%] m-auto ">
                   <h2 className="my-[10px] font-inter font-[600] text-[16px] leading-[24px] text-[#000]">
                     Events
                   </h2>
@@ -108,10 +108,10 @@ const Search = () => {
                       desc="Host description talking about host doing host things"
                     />
                   </div>
-                </>
+                </div>
               ) : (
                 <p className="font-inter font-[400] text-[16px] leading-[24px] text-[#000]">
-                  We couldn’t find any results that match your that search.
+                  We couldn’t find any results that match your that search..
                 </p>
               )}
             </div>

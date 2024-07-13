@@ -43,7 +43,7 @@ const LineCharts = () => {
   };
 
   return (
-    <ResponsiveContainer width={'100%'} height={150} >
+    <ResponsiveContainer width={'100%'} height={89} >
       <LineChart data={data}>
         <Tooltip content={<CustomTooltip />} />
         <Line type="monotone" dataKey="earnings" strokeWidth={6} stroke="#0E8A74" dot={false}  />

@@ -30,12 +30,12 @@ const OtpPage = () => {
       <form>
 
         <OtpInput />
-        <Buttons styles={{ marginTop: "20px", width: "100%", padding: "10px 10px", fontSize: "14px", backgroundColor: "var(--orange)", textTransform: "capitalize" }} method={() => navigate("/login")}>Verify</Buttons>
+        <Buttons styles={{ marginTop: "20px", width: "100%", padding: "10px 10px", fontSize: "14px", backgroundColor: "var(--orange)", textTransform: "capitalize" }} method={() => navigate("/login-host")}>Verify</Buttons>
       </form>
 
 
       <div className='text-center mt-3'>
-        <span className={`${styles.span}`}>Not received your code? &nbsp; <Link to="/login" className={`${styles.forgot_password2}`}> Resend Code</Link></span>
+        <span className={`${styles.span}`}>Not received your code? &nbsp; <Link to="/login-host" className={`${styles.forgot_password2}`}> Resend Code</Link></span>
       </div>
 
     </div>

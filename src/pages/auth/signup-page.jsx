@@ -85,7 +85,7 @@ const SignupPage = ({setRole}) => {
       </div>
       <SocialBtn />
       <div className='text-center mt-3'>
-            <span className={`${styles.span}`}>Already a member? &nbsp; <Link to="/login" className={`${styles.forgot_password2}`}> LOG IN</Link></span>
+            <span className={`${styles.span}`}>Already a member? &nbsp; <Link to="/login-host" className={`${styles.forgot_password2}`}> LOG IN</Link></span>
          </div>
     </div>
   )

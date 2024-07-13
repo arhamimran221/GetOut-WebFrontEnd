@@ -16,12 +16,16 @@ import LineCharts from "../Charts/LineCharts.jsx";
 import SaveChart from "../Charts/SaveChart.jsx";
 import TotalChart from "../Charts/TotalChart.jsx";
 import { useNavigate } from "react-router-dom";
+import emergency from "../../Assets/emergencyMark.svg";
+import bin from "../../Assets/deleteIcon.svg"
+import CardsImage from "../../Assets/cardImage.png";
+import EventsData from "../../pages/Events/EventsData.jsx";
 
 const Dasboard = () => {
   const [date, setDate] = useState(new Date());
-  const [views, setViews] = useState(false);
-  const [saveevent, setSveEvent] = useState(false);
-  const [totalevent, setTotalEvent] = useState(false);
+  const [views, setViews] = useState(true);
+  const [saveevent, setSveEvent] = useState(true);
+  const [totalevent, setTotalEvent] = useState(true);
   const dayLabels = ["SU", "MO", "TU", "WE", "TH", "FR", "SA"];
   const navigate = useNavigate();
 
@@ -29,20 +33,38 @@ const Dasboard = () => {
     <div className="">
       <div className="flex justify-between items-center">
         <div className="">
-          <h2 className="font-raleway font-[600] text-[35px] leading-[75px]">
+          <h2 className="font-raleway font-[600] text-[32px] leading-[80px] text-[#404580]">
             Welcome back,Host
           </h2>
-          <p className="text-[#767C8C] font-manrope font-[500] text-[14px] leading-[28.86px] mt-[-10px]">
+          <p className="text-[#828282] font-manrope font-[500] text-[16px] leading-[21.86px] mt-[-20px]">
             Track your events and manage your account
           </p>
         </div>
-        <div className="">
-          <button className="font-poppins text-[16px] text-[#fff] bg-[#ff0000] px-6 py-3 rounded-md font-[500] hover:bg-transparent hover:border-[#ff000] border-[1px] border-[#ff0000] hover:text-[#ff0000] ease-in-out duration-300" onClick={() => navigate('/events-dashboard/create-event')}>
-            Create Event
-          </button>
-        </div>
       </div>
-      <div className="flex gap-[10px] w-[100%] mt-[10px]">
+      <div className="bg-[#FBBC05] p-[10px] rounded-[8px] flex gap-[10px] my-[20px]">
+        <img src={emergency} alt="" srcset="" />
+        <p className="font-inter font-[400] text-[14px] text-[#000]">
+          Notifications to host i.e. your subscription payment has not gone
+          through
+        </p>
+      </div>
+      <div className="flex gap-[10px] w-[100%] mt-[20px] h-[112px]">
+        <div
+          className="w-[25%] overflow-hidden bg-[#FFFF] rounded-lg p-2"
+          style={{ boxShadow: "0px 0px 13px 0px #523F690D" }}
+        >
+          <div className="flex flex-col justify-between h-[100%]">
+            <p className="font-manrope  text-[14px] font-[700] text-[#828282]">
+              Subscription
+            </p>
+            <h2 className="font-inter font-[600] text-[32px] leading-[48px] tracking-[-1%] text-[#404580]">
+              Basic Plan
+            </h2>
+            <strong className="font-manrope font-[700] text-[14px] leading-[20px]">
+              4 credits left this month
+            </strong>
+          </div>
+        </div>
         <div
           className={
             views
@@ -55,16 +77,11 @@ const Dasboard = () => {
             className="flex justify-between items-center cursor-pointer"
             onClick={() => setViews(!views)}
           >
-            <p className="flex items-center gap-[10px] text-[#19191A] text-[30px] font-[600]">
-              215
-              {views ? (
-                <UpIcon fill="#0E8A74" className="w-[10px]" />
-              ) : (
-                <img src={downicon} alt="" />
-              )}
+            <p className="font-manrope  text-[14px] font-[700] text-[#828282]">
+              Number of Events
             </p>
-            <p className="font-poppins text-[14px] text-[#19191A] font-[500]">
-              Views
+            <p className="font-manrope font-[700] text-[14px] leading-[20px]">
+              215
             </p>
           </div>
           {views && (
@@ -84,16 +101,11 @@ const Dasboard = () => {
           onClick={() => setSveEvent(!saveevent)}
         >
           <div className="flex justify-between items-center cursor-pointer">
-            <p className="flex items-center gap-[10px] text-[#19191A] text-[30px] font-[600]">
-              536k
-              {saveevent ? (
-                <UpIcon fill="#FB3E7A" className="w-[10px]" />
-              ) : (
-                <img src={savedown} alt="missing" />
-              )}
+            <p className="font-manrope  text-[14px] font-[700] text-[#828282]">
+              Number of Events
             </p>
-            <p className="font-poppins text-[14px] text-[#19191A] font-[500]">
-              Save Events
+            <p className="font-manrope font-[700] text-[14px] leading-[20px]">
+              215
             </p>
           </div>
           {saveevent && (
@@ -115,16 +127,11 @@ const Dasboard = () => {
             className="flex justify-between items-center cursor-pointer"
             onClick={() => setTotalEvent(!totalevent)}
           >
-            <p className="flex items-center gap-[10px] text-[#19191A] text-[30px] font-[600]">
-              536k
-              {totalevent ? (
-                <UpIcon fill="#A9DAF2" className="w-[10px]" />
-              ) : (
-                <img src={totaldown} alt="missing" />
-              )}
+            <p className="font-manrope  text-[14px] font-[700] text-[#828282]">
+              Number of Events
             </p>
-            <p className="font-poppins text-[14px] text-[#19191A] font-[500]">
-              Save Events
+            <p className="font-manrope font-[700] text-[14px] leading-[20px]">
+              215
             </p>
           </div>
           {totalevent && (
@@ -134,50 +141,29 @@ const Dasboard = () => {
             </div>
           )}
         </div>
-        <div className="w-[25%] overflow-hidden bg-[#FFFF] rounded-lg p-2 flex items-center gap-[10px]">
-          <div className="">
-            <img src={crownIcon} alt="" />
-          </div>
-          <div className="">
-            <h4 className="font-poppins text-[#19191A] font-[500] text-[16px]">
-              Subscription Plan
-            </h4>
-            <p className="font-poppins text-[#FF0000] font-[500] text-[16px] my-[4px]">
-              Basic
-            </p>
-            <button className="font-poppins text-[16px] text-[#fff] bg-[#ff0000] px-3 py-2 rounded-md font-[500] hover:bg-transparent hover:border-[#ff000] border-[1px] border-[#ff0000] hover:text-[#ff0000] ease-in-out duration-300">
-              Upgrade Now
-            </button>
-          </div>
-        </div>
       </div>
       <div className="flex mt-[10px] w-[100%] gap-[10px] ">
         <div
-          className={`transition-all duration-300 ${
-            !views && !saveevent && !totalevent
-              ? "w-[75.5%] bg-[#fff] rounded-lg p-3 mt-[-46px]"
-              : "w-[75.5%] bg-[#fff] rounded-lg p-3 "
-          }`}
-          style={{ boxShadow: "0px 0px 13px 0px #523F690D" }}
+          className="w-[68%]"
         >
-          <h2 className="font-poppins font-[600] text-[18px] leading-[24px] mb-[10px]">
+          <div className="w-[100%] bg-[#fff] rounded-[8px] p-[10px]" style={{ boxShadow: "0px 0px 13px 0px #523F690D" }}>
+          <h2 className="font-inter font-[700] text-[20px] leading-[30px] mb-[10px] text-[#404580]">
             My Events
           </h2>
-          <div className="flex items-center w-[100%] gap-[10px] border-b-[#E4E4E4] border-b-[1px] py-[20px] cursor-pointer">
+          <div className="flex items-center w-[100%] gap-[10px] py-[6px] cursor-pointer">
+            <div className="w-[80%] flex items-center gap-[20px]">
             <div className="w-[15%]">
               <img src={Meetup} alt="" />
             </div>
-            <div className="w-[70%]">
-              <h3 className="font-poppins font-[500] text-[16px] leading-[27px] text-[#19191A]">
-                International Online Meetup 2020
+            <div className="w-[55%]">
+              <h3 className="font-inter font-[500] text-[14px] leading-[21px] text-[#00000] flex items-center gap-[20px]">
+                Event Title  <span className="text-[8px] font-inter text-[#ff0000]">FEATURED</span>
               </h3>
-              <p className="font-poppins font-[400] text-[12px] leading-[22px] text-[#FF0000]">
-                Medan, Indonesia
+              <p className="font-inter font-[500] text-[12px] leading-[18px] text-[#828282]">
+                Firehouse Art Gallery
               </p>
-              <p className="font-poppins text-[#404040] font-[400] text-[12px] leading-[18px]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad mini
+              <p className="font-inter font-[500] text-[12px] leading-[18px] text-[#828282]">
+                Sun, 22 Jun, 08:00-10:00
               </p>
             </div>
             <div className="w-[30%] flex justify-between items-center">
@@ -185,49 +171,60 @@ const Dasboard = () => {
                 <img
                   src={EyeImage}
                   alt=""
+                  width={38}
+                  height={19}
                   className="bg-[#FAFBFC] p-2 rounded-lg"
                 />
-                <p className="font-poppins text-[#19191A] font-[500] text-[14px] leading-[22.5px]">
-                  22k
+                <p className="font-inter text-[#828282] font-[500] text-[14px] leading-[21px]">
+                264
                 </p>
               </div>
               <div className="flex flex-col justify-center items-center gap-[10px]">
                 <img
                   src={floppy}
                   alt=""
+                  width={36}
+                  height={19}
                   className="bg-[#FAFBFC] p-2 rounded-lg"
                 />
-                <p className="font-poppins text-[#19191A] font-[500] text-[14px] leading-[22.5px]">
-                  350
+                <p className="font-inter text-[#828282] font-[500] text-[14px] leading-[21px]">
+                264
                 </p>
               </div>
               <div className="flex flex-col justify-center items-center gap-[10px]">
                 <img
                   src={CalendarIcon}
                   alt=""
+                  width={32}
+                  height={19}
                   className="bg-[#FAFBFC] p-2 rounded-lg"
                 />
-                <p className="font-poppins text-[#19191A] font-[500] text-[14px] leading-[22.5px]">
-                  24 June 2020
+                <p className="font-inter text-[#828282] font-[500] text-[14px] leading-[21px]">
+                  25
                 </p>
               </div>
+            </div>
+            </div>
+            <div className="w-[20%] flex gap-[20px] justify-end">
+              <button className="text-[#828282] font-inter font-[500] text-[14px] leading-[21px]">View</button>
+              <button className="text-[#828282] font-inter font-[500] text-[14px] leading-[21px]">Edit</button>
+              <button className="text-[#828282] font-inter font-[500] text-[14px] leading-[21px]"><img src={bin} alt="" width={14} srcset="" /></button>
             </div>
           </div>
- <div className="flex items-center w-[100%] gap-[10px] border-b-[#E4E4E4] border-b-[1px] py-[20px] cursor-pointer">
+          <div className="flex items-center w-[100%] gap-[10px] py-[6px] cursor-pointer">
+            <div className="w-[80%] flex items-center gap-[20px]">
             <div className="w-[15%]">
               <img src={Meetup} alt="" />
             </div>
-            <div className="w-[70%]">
-              <h3 className="font-poppins font-[500] text-[16px] leading-[27px] text-[#19191A]">
-                International Online Meetup 2020
+            <div className="w-[55%]">
+              <h3 className="font-inter font-[500] text-[14px] leading-[21px] text-[#00000] flex items-center gap-[20px]">
+                Event Title  <span className="text-[8px] font-inter text-[#ff0000]">FEATURED</span>
               </h3>
-              <p className="font-poppins font-[400] text-[12px] leading-[22px] text-[#FF0000]">
-                Medan, Indonesia
+              <p className="font-inter font-[500] text-[12px] leading-[18px] text-[#828282]">
+                Firehouse Art Gallery
               </p>
-              <p className="font-poppins text-[#404040] font-[400] text-[12px] leading-[18px]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad mini
+              <p className="font-inter font-[500] text-[12px] leading-[18px] text-[#828282]">
+                Sun, 22 Jun, 08:00-10:00
               </p>
             </div>
             <div className="w-[30%] flex justify-between items-center">
@@ -235,49 +232,60 @@ const Dasboard = () => {
                 <img
                   src={EyeImage}
                   alt=""
+                  width={38}
+                  height={19}
                   className="bg-[#FAFBFC] p-2 rounded-lg"
                 />
-                <p className="font-poppins text-[#19191A] font-[500] text-[14px] leading-[22.5px]">
-                  22k
+                <p className="font-inter text-[#828282] font-[500] text-[14px] leading-[21px]">
+                264
                 </p>
               </div>
               <div className="flex flex-col justify-center items-center gap-[10px]">
                 <img
                   src={floppy}
                   alt=""
+                  width={36}
+                  height={19}
                   className="bg-[#FAFBFC] p-2 rounded-lg"
                 />
-                <p className="font-poppins text-[#19191A] font-[500] text-[14px] leading-[22.5px]">
-                  350
+                <p className="font-inter text-[#828282] font-[500] text-[14px] leading-[21px]">
+                264
                 </p>
               </div>
               <div className="flex flex-col justify-center items-center gap-[10px]">
                 <img
                   src={CalendarIcon}
                   alt=""
+                  width={32}
+                  height={19}
                   className="bg-[#FAFBFC] p-2 rounded-lg"
                 />
-                <p className="font-poppins text-[#19191A] font-[500] text-[14px] leading-[22.5px]">
-                  24 June 2020
+                <p className="font-inter text-[#828282] font-[500] text-[14px] leading-[21px]">
+                  25
                 </p>
               </div>
+            </div>
+            </div>
+            <div className="w-[20%] flex gap-[20px] justify-end">
+              <button className="text-[#828282] font-inter font-[500] text-[14px] leading-[21px]">View</button>
+              <button className="text-[#828282] font-inter font-[500] text-[14px] leading-[21px]">Edit</button>
+              <button className="text-[#828282] font-inter font-[500] text-[14px] leading-[21px]"><img src={bin} alt="" width={14} srcset="" /></button>
             </div>
           </div>
- <div className="flex items-center w-[100%] gap-[10px] border-b-[#E4E4E4] border-b-[1px] py-[20px] cursor-pointer">
+          <div className="flex items-center w-[100%] gap-[10px] py-[6px] cursor-pointer">
+            <div className="w-[80%] flex items-center gap-[20px]">
             <div className="w-[15%]">
               <img src={Meetup} alt="" />
             </div>
-            <div className="w-[70%]">
-              <h3 className="font-poppins font-[500] text-[16px] leading-[27px] text-[#19191A]">
-                International Online Meetup 2020
+            <div className="w-[55%]">
+              <h3 className="font-inter font-[500] text-[14px] leading-[21px] text-[#00000] flex items-center gap-[20px]">
+                Event Title  <span className="text-[8px] font-inter text-[#ff0000]">FEATURED</span>
               </h3>
-              <p className="font-poppins font-[400] text-[12px] leading-[22px] text-[#FF0000]">
-                Medan, Indonesia
+              <p className="font-inter font-[500] text-[12px] leading-[18px] text-[#828282]">
+                Firehouse Art Gallery
               </p>
-              <p className="font-poppins text-[#404040] font-[400] text-[12px] leading-[18px]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad mini
+              <p className="font-inter font-[500] text-[12px] leading-[18px] text-[#828282]">
+                Sun, 22 Jun, 08:00-10:00
               </p>
             </div>
             <div className="w-[30%] flex justify-between items-center">
@@ -285,49 +293,60 @@ const Dasboard = () => {
                 <img
                   src={EyeImage}
                   alt=""
+                  width={38}
+                  height={19}
                   className="bg-[#FAFBFC] p-2 rounded-lg"
                 />
-                <p className="font-poppins text-[#19191A] font-[500] text-[14px] leading-[22.5px]">
-                  22k
+                <p className="font-inter text-[#828282] font-[500] text-[14px] leading-[21px]">
+                264
                 </p>
               </div>
               <div className="flex flex-col justify-center items-center gap-[10px]">
                 <img
                   src={floppy}
                   alt=""
+                  width={36}
+                  height={19}
                   className="bg-[#FAFBFC] p-2 rounded-lg"
                 />
-                <p className="font-poppins text-[#19191A] font-[500] text-[14px] leading-[22.5px]">
-                  350
+                <p className="font-inter text-[#828282] font-[500] text-[14px] leading-[21px]">
+                264
                 </p>
               </div>
               <div className="flex flex-col justify-center items-center gap-[10px]">
                 <img
                   src={CalendarIcon}
                   alt=""
+                  width={32}
+                  height={19}
                   className="bg-[#FAFBFC] p-2 rounded-lg"
                 />
-                <p className="font-poppins text-[#19191A] font-[500] text-[14px] leading-[22.5px]">
-                  24 June 2020
+                <p className="font-inter text-[#828282] font-[500] text-[14px] leading-[21px]">
+                  25
                 </p>
               </div>
+            </div>
+            </div>
+            <div className="w-[20%] flex gap-[20px] justify-end">
+              <button className="text-[#828282] font-inter font-[500] text-[14px] leading-[21px]">View</button>
+              <button className="text-[#828282] font-inter font-[500] text-[14px] leading-[21px]">Edit</button>
+              <button className="text-[#828282] font-inter font-[500] text-[14px] leading-[21px]"><img src={bin} alt="" width={14} srcset="" /></button>
             </div>
           </div>
-           <div className="flex items-center w-[100%] gap-[10px] border-b-[#E4E4E4] border-b-[1px] py-[20px] cursor-pointer">
+          <div className="flex items-center w-[100%] gap-[10px] py-[6px] cursor-pointer">
+            <div className="w-[80%] flex items-center gap-[20px]">
             <div className="w-[15%]">
               <img src={Meetup} alt="" />
             </div>
-            <div className="w-[70%]">
-              <h3 className="font-poppins font-[500] text-[16px] leading-[27px] text-[#19191A]">
-                International Online Meetup 2020
+            <div className="w-[55%]">
+              <h3 className="font-inter font-[500] text-[14px] leading-[21px] text-[#00000] flex items-center gap-[20px]">
+                Event Title  <span className="text-[8px] font-inter text-[#ff0000]">FEATURED</span>
               </h3>
-              <p className="font-poppins font-[400] text-[12px] leading-[22px] text-[#FF0000]">
-                Medan, Indonesia
+              <p className="font-inter font-[500] text-[12px] leading-[18px] text-[#828282]">
+                Firehouse Art Gallery
               </p>
-              <p className="font-poppins text-[#404040] font-[400] text-[12px] leading-[18px]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad mini
+              <p className="font-inter font-[500] text-[12px] leading-[18px] text-[#828282]">
+                Sun, 22 Jun, 08:00-10:00
               </p>
             </div>
             <div className="w-[30%] flex justify-between items-center">
@@ -335,37 +354,90 @@ const Dasboard = () => {
                 <img
                   src={EyeImage}
                   alt=""
+                  width={38}
+                  height={19}
                   className="bg-[#FAFBFC] p-2 rounded-lg"
                 />
-                <p className="font-poppins text-[#19191A] font-[500] text-[14px] leading-[22.5px]">
-                  22k
+                <p className="font-inter text-[#828282] font-[500] text-[14px] leading-[21px]">
+                264
                 </p>
               </div>
               <div className="flex flex-col justify-center items-center gap-[10px]">
                 <img
                   src={floppy}
                   alt=""
+                  width={36}
+                  height={19}
                   className="bg-[#FAFBFC] p-2 rounded-lg"
                 />
-                <p className="font-poppins text-[#19191A] font-[500] text-[14px] leading-[22.5px]">
-                  350
+                <p className="font-inter text-[#828282] font-[500] text-[14px] leading-[21px]">
+                264
                 </p>
               </div>
               <div className="flex flex-col justify-center items-center gap-[10px]">
                 <img
                   src={CalendarIcon}
                   alt=""
+                  width={32}
+                  height={19}
                   className="bg-[#FAFBFC] p-2 rounded-lg"
                 />
-                <p className="font-poppins text-[#19191A] font-[500] text-[14px] leading-[22.5px]">
-                  24 June 2020
+                <p className="font-inter text-[#828282] font-[500] text-[14px] leading-[21px]">
+                  25
                 </p>
               </div>
+            </div>
+            </div>
+            <div className="w-[20%] flex gap-[20px] justify-end">
+              <button className="text-[#828282] font-inter font-[500] text-[14px] leading-[21px]">View</button>
+              <button className="text-[#828282] font-inter font-[500] text-[14px] leading-[21px]">Edit</button>
+              <button className="text-[#828282] font-inter font-[500] text-[14px] leading-[21px]"><img src={bin} alt="" width={14} srcset="" /></button>
+            </div>
+          </div>
+          </div>
+          <div className="w-[100%] mt-[10px] flex gap-[10px] h-[268px]">
+            <div className="w-[50%] p-[10px] bg-[#fff] rounded-[8px]" style={{ boxShadow: "0px 0px 13px 0px #523F690D" }}>
+            <h2 className="font-inter font-[700] text-[20px] leading-[30px] mb-[10px] text-[#404580]">
+            Notifications
+          </h2>
+          <div className="h-[200px] overflow-y-scroll">
+          <div className="flex items-center gap-[10px] mb-2">
+            <div className="w-[67px] h-[67px] overflow-hidden rounded-full">
+          <img src={Meetup} alt="" className="w-[100%] h-[100%] object-cover"/>
+          </div>
+          <p className="font-inter font-[500] text-[14px] leading-[21px] w-[253px]">The Angel has requested to be an associated host with your event “Event Name”</p>
+          </div>
+          <div className="flex items-center gap-[10px] mb-2">
+            <div className="w-[67px] h-[67px] overflow-hidden rounded-full">
+          <img src={Meetup} alt="" className="w-[100%] h-[100%] object-cover"/>
+          </div>
+          <p className="font-inter font-[500] text-[14px] leading-[21px] w-[253px]">You have a new follower</p>
+          </div>
+          <div className="flex items-center gap-[10px] mb-2">
+            <div className="w-[67px] h-[67px] overflow-hidden rounded-full">
+          <img src={Meetup} alt="" className="w-[100%] h-[100%] object-cover"/>
+          </div>
+          <p className="font-inter font-[500] text-[14px] leading-[21px] w-[253px]">Username follows your event “Event Name”.</p>
+          </div>
+          <div className="flex items-center gap-[10px] mb-2">
+            <div className="w-[67px] h-[67px] overflow-hidden rounded-full">
+          <img src={Meetup} alt="" className="w-[100%] h-[100%] object-cover"/>
+          </div>
+          <p className="font-inter font-[500] text-[14px] leading-[21px] w-[253px]">The Angel has requested to be an associated host with your event “Event Name”</p>
+          </div>
+          </div>
+            </div>
+            <div className="w-[50%] p-[10px] bg-[#404580] rounded-[8px] flex flex-col items-center text-white justify-between" style={{ boxShadow: "0px 0px 13px 0px #523F690D" }}>
+              <h2 className="font-inter font-[700] text-[20px] leading-[30px] ">Get access to more events?</h2>
+              <p className="font-poppins font-[400] text-[14px] leading-[28px]">List up to 20 events per month.</p>
+              <h1 className="font-poppins font-[400] text-[50px] leading-[28px]">£49.99<span className="font-[400] text-[16px]">/month</span></h1>
+              <p className="font-poppins font-[400] italic text-[14px] leading-[28px]">Less than £2.50 per event.</p>
+              <button className="py-[8px] bg-[#ff0000] text-[#fff] rounded-[8px] font-inter font-[700] text-[16px] leading-[24px] w-[100%]">Upgrade Now</button>
             </div>
           </div>
         </div>
         <div
-          className="w-[24.5%] bg-[#fff] rounded-lg p-2"
+          className="w-[32%] bg-[#fff] rounded-lg p-2"
           style={{ boxShadow: "0px 0px 13px 0px #523F690D" }}
         >
           <Calendar
@@ -373,43 +445,14 @@ const Dasboard = () => {
             value={date}
             formatShortWeekday={(locale, date) => dayLabels[date.getDay()]}
           />
-          <div className="mt-[10px]">
-            <h2 className="font-poppins font-[600] text-[16px] leading-[24px] text-[#19191A]">
-              Upcoming Events
+          <div className="mt-[20px]">
+            <h2 className="font-inter font-[700] text-[16px] leading-[24px] text-[#000]">
+            Your events on 17/06/2024
             </h2>
-            <div className="flex gap-[10px] mt-[10px]">
-              <div className="bg-[#FF914D1A] flex flex-col items-center px-2 py-2 rounded-lg gap-[7px]">
-                <p className="font-poppins font-[600] text-[26px] text-[#ff0000]">
-                  3
-                </p>
-                <span className="font-poppins font-[500] text-[14px]">Wed</span>
-                <div className="p-2 bg-[#ff0000] rounded-full border-[1px] border-[#fff] mb-[-15px]"></div>
-              </div>
-              <div className="">
-                <p className="font-poppins text-[#19191A] text-[14px] leading-[22px]">
-                  Live Concert Choir Charity Event 2020
-                </p>
-                <button className="font-poppins text-[14px] font-[500] text-[#19191A] cursor-pointer hover:text-[#ff0000] mt-[20px]">
-                  View Details <ArrowRightOutlined />
-                </button>
-              </div>
-            </div>
-            <div className="flex gap-[10px] mt-[20px]">
-              <div className="bg-[#FF914D1A] flex flex-col items-center px-2 py-2 rounded-lg gap-[7px]">
-                <p className="font-poppins font-[600] text-[26px] text-[#ff0000]">
-                  3
-                </p>
-                <span className="font-poppins font-[500] text-[14px]">Wed</span>
-                <div className="p-2 bg-[#ff0000] rounded-full border-[1px] border-[#ffff] mb-[-15px]"></div>
-              </div>
-              <div className="">
-                <p className="font-poppins text-[#19191A] text-[14px] leading-[22px]">
-                  Live Concert Choir Charity Event 2020
-                </p>
-                <button className="font-poppins text-[14px] font-[500] text-[#19191A] cursor-pointer hover:text-[#ff0000] mt-[20px]">
-                  View Details <ArrowRightOutlined />
-                </button>
-              </div>
+            <div className="flex flex-col gap-[10px] mt-[20px]">
+            <EventsData image_url={CardsImage} title="Event Title" />
+            <EventsData image_url={CardsImage} title="Event Title" />
+            <EventsData image_url={CardsImage} title="Event Title" />
             </div>
           </div>
         </div>

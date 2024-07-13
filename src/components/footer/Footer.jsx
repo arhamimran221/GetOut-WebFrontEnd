@@ -81,7 +81,7 @@ export default function footer() {
                 </li>
                 <li className=" mt-[10px] mb-[6px]">
                   <NavLink
-                    to="/events-dashboard"
+                    to="/host-protocol"
                     className="font-inter font-[400] text-[16px] leading-[21px] text-[#000]"
                   >
                     Log In
@@ -89,7 +89,7 @@ export default function footer() {
                 </li>
                 <li className=" mt-[10px] mb-[6px]">
                   <NavLink
-                    to="/events-dashboard"
+                    to="/host-protocol"
                     className="font-inter font-[400] text-[16px] leading-[21px] text-[#000]"
                   >
                     Host Protocol

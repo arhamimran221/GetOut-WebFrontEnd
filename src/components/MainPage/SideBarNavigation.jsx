@@ -2,6 +2,8 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import HomeIconActive from "../../Assets/homeActive.svg";
 import HomeIcon from "../../Assets/homeIcon.svg";
+import notifyIcon from "../../Assets/notifyIcon.svg"
+import notifyActive from "../../Assets/notifyActive.svg"
 import CreateIcon from "../../Assets/createEvent.svg";
 import CreateIconActive from "../../Assets/createEventActive.svg";
 import ManageIcon from "../../Assets/manageEvent.svg";
@@ -13,10 +15,11 @@ import SubscriptionsActive from "../../Assets/subsIconActive.svg";
 import signOut from "../../Assets/logOut-Icon.svg";
 import crownIcon from "../../Assets/crownIcon.svg";
 import hostDbIcon from "../../Assets/hostDbIcon.svg";
+import accountdetail from "../../Assets/accountDetailsIcon.svg"
+import accountActive from "../../Assets/accountActive.svg"
 
 const SideBarNavigation = ({ sidebarCollapsed, toggleSidebar, role }) => {
   const location = useLocation();
-  console.log(role);
 
   return (
     <div
@@ -28,124 +31,169 @@ const SideBarNavigation = ({ sidebarCollapsed, toggleSidebar, role }) => {
         {role === "admin" ? (
           <>
             <Link
-              to="/events-dashboard"
+              to="/host-protocol"
               className={`nav-link ${
-                location.pathname === "/events-dashboard" ? "active" : ""
+                location.pathname === "/host-protocol" ? "active" : ""
               }`}
             >
               <div className="w-[20%]">
-                {location.pathname === "/events-dashboard" ? (
+                {location.pathname === "/host-protocol" ? (
                   <img src={HomeIconActive} width={22} />
                 ) : (
                   <img src={HomeIcon} width={22} />
                 )}
               </div>
               <span
-                className={`w-[80%] font-poppins text-[14px] font-[500] font-poppins ${
-                  location.pathname === "/events-dashboard" ? "text-[#fff]" : ""
+                className={`w-[80%] font-inter text-[14px] leading-[21px] ${
+                  location.pathname === "/host-protocol" ? "text-[#fff] font-[700]" : "font-[500]"
                 }`}
               >
                 Home
               </span>
             </Link>
             <Link
-              to="/events-dashboard/create-event"
+              to="/host-protocol/notification"
               className={`nav-link ${
-                location.pathname === "/events-dashboard/create-event"
+                location.pathname === "/host-protocol/notification"
                   ? "active"
                   : ""
               }`}
             >
               <div className="w-[20%]">
-                {location.pathname === "/events-dashboard/create-event" ? (
-                  <img src={CreateIconActive} width={22} />
+                {location.pathname === "/host-protocol/notification" ? (
+                  <img src={notifyActive} width={22} />
                 ) : (
-                  <img src={CreateIcon} width={22} />
+                  <img src={notifyIcon} width={22} />
+                )}
+              </div>
+              <div
+                className={`w-[80%] font-inter text-[14px] leading-[21px] flex items-center gap-[15px] ${
+                  location.pathname === "/host-protocol/notification"
+                    ? "text-[#fff] font-[700]"
+                    : "font-[500]"
+                }`}
+              >
+                <p>Notifications</p> <span className="w-[10px] h-[10px] bg-[#FF0000] rounded-full"></span>
+              </div>
+            </Link>
+            <Link
+              to="/host-protocol/create-event"
+              className={`nav-link ${
+                location.pathname === "/host-protocol/create-event"
+                  ? "active"
+                  : ""
+              }`}
+            >
+              <div className="w-[20%]">
+                {location.pathname === "/host-protocol/create-event" ? (
+                  <img src={CreateIconActive} width={28} />
+                ) : (
+                  <img src={CreateIcon} width={28} />
                 )}
               </div>
               <span
-                className={`w-[80%] font-poppins text-[14px] font-[500] font-poppins ${
-                  location.pathname === "/events-dashboard/create-event"
-                    ? "text-[#fff]"
-                    : ""
+                className={`w-[80%] font-inter text-[14px] leading-[21px] ${
+                  location.pathname === "/host-protocol/create-event"
+                    ?  "text-[#fff] font-[700]" : "font-[500]"
                 }`}
               >
                 Create Events
               </span>
             </Link>
             <Link
-              to="/events-dashboard/manage-events"
+              to="/host-protocol/manage-events"
               className={`nav-link ${
-                location.pathname === "/events-dashboard/manage-events"
+                location.pathname === "/host-protocol/manage-events"
                   ? "active"
                   : ""
               }`}
             >
               <div className="w-[20%]">
-                {location.pathname === "/events-dashboard/manage-events" ? (
-                  <img src={ManageIconActive} width={22} />
+                {location.pathname === "/host-protocol/manage-events" ? (
+                  <img src={ManageIconActive} width={28} />
                 ) : (
-                  <img src={ManageIcon} width={22} />
+                  <img src={ManageIcon} width={28} />
                 )}
               </div>
               <span
-                className={`w-[80%] font-poppins text-[14px] font-[500] font-poppins ${
-                  location.pathname === "/events-dashboard/manage-events"
-                    ? "text-[#fff]"
-                    : ""
+                className={`w-[80%] font-inter text-[14px] leading-[21px] ${
+                  location.pathname === "/host-protocol/manage-events"
+                    ?  "text-[#fff] font-[700]" : "font-[500]"
                 }`}
               >
                 Manage Events
               </span>
             </Link>
             <Link
-              to="/events-dashboard/profile-settings"
+              to="/host-protocol/profile-settings"
               className={`nav-link ${
-                location.pathname === "/events-dashboard/profile-settings"
+                location.pathname === "/host-protocol/profile-settings"
                   ? "active"
                   : ""
               }`}
             >
               <div className="w-[20%]">
-                {location.pathname === "/events-dashboard/profile-settings" ? (
+                {location.pathname === "/host-protocol/profile-settings" ? (
                   <img src={profileIconActive} width={22} />
                 ) : (
                   <img src={profileIcon} width={22} />
                 )}
               </div>
               <span
-                className={`w-[80%] font-poppins text-[14px] font-[500] font-poppins ${
-                  location.pathname === "/events-dashboard/profile-settings"
-                    ? "text-[#fff]"
-                    : ""
+                className={`w-[80%] font-inter text-[14px] leading-[21px] ${
+                  location.pathname === "/host-protocol/profile-settings"
+                    ?  "text-[#fff] font-[700]" : "font-[500]"
                 }`}
               >
                 Profile Setting
               </span>
             </Link>
             <Link
-              to="/events-dashboard/subscription"
+              to="/host-protocol/subscription"
               className={`nav-link ${
-                location.pathname === "/events-dashboard/subscription"
+                location.pathname === "/host-protocol/subscription"
                   ? "active"
                   : ""
               }`}
             >
               <div className="w-[20%]">
-                {location.pathname === "/events-dashboard/subscription" ? (
+                {location.pathname === "/host-protocol/subscription" ? (
                   <img src={SubscriptionsActive} width={22} />
                 ) : (
                   <img src={Subscriptions} width={22} />
                 )}
               </div>
               <span
-                className={`w-[80%] font-poppins text-[14px] font-[500] font-poppins ${
-                  location.pathname === "/events-dashboard/subscription"
-                    ? "text-[#fff]"
-                    : ""
+                className={`w-[80%] font-inter text-[14px] leading-[21px] ${
+                  location.pathname === "/host-protocol/subscription"
+                    ?  "text-[#fff] font-[700]" : "font-[500]"
                 }`}
               >
                 Subscription
+              </span>
+            </Link>
+            <Link
+              to="/host-protocol/account-details"
+              className={`nav-link ${
+                location.pathname === "/host-protocol/account-details"
+                  ? "active"
+                  : ""
+              }`}
+            >
+              <div className="w-[20%]">
+                {location.pathname === "/host-protocol/account-details" ? (
+                  <img src={accountActive} width={22} />
+                ) : (
+                  <img src={accountdetail} width={22} />
+                )}
+              </div>
+              <span
+                className={`w-[80%] font-inter text-[14px] leading-[21px] ${
+                  location.pathname === "/host-protocol/account-details"
+                    ?  "text-[#fff] font-[700]" : "font-[500]"
+                }`}
+              >
+                Account Details
               </span>
             </Link>
             <Link
@@ -162,8 +210,8 @@ const SideBarNavigation = ({ sidebarCollapsed, toggleSidebar, role }) => {
                 )}
               </div>
               <span
-                className={`w-[80%] font-poppins text-[14px] font-[500] font-poppins ${
-                  location.pathname === "/sign-out" ? "text-[#fff]" : ""
+                className={`w-[80%] font-inter text-[14px] leading-[21px] ${
+                  location.pathname === "/sign-out" ? "text-[#fff] font-[700]" : "font-[500]"
                 }`}
               >
                 Sign Out
@@ -186,7 +234,7 @@ const SideBarNavigation = ({ sidebarCollapsed, toggleSidebar, role }) => {
                 )}
               </div>
               <span
-                className={`w-[80%] font-poppins text-[14px] font-[500] font-poppins ${
+                className={`w-[80%] font-inter text-[14px] leading-[21px] ${
                   location.pathname === "/dashboard" ? "text-[#fff]" : ""
                 }`}
               >
@@ -207,7 +255,7 @@ const SideBarNavigation = ({ sidebarCollapsed, toggleSidebar, role }) => {
                 )}
               </div>
               <span
-                className={`w-[80%] font-poppins text-[14px] font-[500] font-poppins ${
+                className={`w-[80%] font-inter text-[14px] leading-[21px] ${
                   location.pathname === "/dashboard/host-manage"
                     ? "text-[#fff]"
                     : ""
@@ -230,7 +278,7 @@ const SideBarNavigation = ({ sidebarCollapsed, toggleSidebar, role }) => {
                 )}
               </div>
               <span
-                className={`w-[80%] font-poppins text-[14px] font-[500] font-poppins ${
+                className={`w-[80%] font-inter text-[14px] leading-[21px] ${
                   location.pathname === "/dashboard/manage-events"
                     ? "text-[#fff]"
                     : ""
@@ -253,7 +301,7 @@ const SideBarNavigation = ({ sidebarCollapsed, toggleSidebar, role }) => {
                 )}
               </div>
               <span
-                className={`w-[80%] font-poppins text-[14px] font-[500] font-poppins ${
+                className={`w-[80%] font-inter text-[14px] leading-[21px] ${
                   location.pathname === "/sign-out" ? "text-[#fff]" : ""
                 }`}
               >
@@ -263,24 +311,6 @@ const SideBarNavigation = ({ sidebarCollapsed, toggleSidebar, role }) => {
           </>
         )}
 
-        <div className="bg-[#ff0000] p-2 rounded-lg flex flex-col gap-[10px] items-center mt-[25px]">
-          <div className="bg-[#ff0000] p-2 rounded-full mt-[-40px]">
-            <img
-              src={crownIcon}
-              width={40}
-              className="border-[1px] border-[#fff] rounded-full p-1"
-            />
-          </div>
-          <h2 className="font-poppins text-[#fff] text-[22px] leading-[32px]">
-            Events
-          </h2>
-          <p className="font-poppins font-[500] text-center text-[#fff] text-[16px]">
-            Get access to the unlimited Events
-          </p>
-          <button className="bg-[#fff] px-4 py-2 text-[#ff0000] rounded-lg font-poppins text-[14px]">
-            Upgrade Now
-          </button>
-        </div>
       </div>
     </div>
   );
