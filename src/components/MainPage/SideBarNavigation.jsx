@@ -20,6 +20,13 @@ import accountActive from "../../Assets/accountActive.svg"
 
 const SideBarNavigation = ({ sidebarCollapsed, toggleSidebar, role }) => {
   const location = useLocation();
+   
+  const handleSignOut =()=>{
+    if(localStorage.getItem("role")){
+      localStorage.removeItem("role");
+      Navigate("/host-login")
+    }
+  }
 
   return (
     <div
@@ -145,7 +152,7 @@ const SideBarNavigation = ({ sidebarCollapsed, toggleSidebar, role }) => {
                     ?  "text-[#fff] font-[700]" : "font-[500]"
                 }`}
               >
-                Profile Setting
+                Edit your profile
               </span>
             </Link>
             <Link
@@ -197,7 +204,7 @@ const SideBarNavigation = ({ sidebarCollapsed, toggleSidebar, role }) => {
               </span>
             </Link>
             <Link
-              to="/sign-out"
+              onClick={()=>handleSignOut()}
               className={`nav-link ${
                 location.pathname === "/sign-out" ? "active" : ""
               }`}

@@ -542,7 +542,7 @@ const SavedEvents = () => {
                       type="text"
                       placeholder="Profile Name"
                       style={{ padding: "17.5px 14px" }}
-                      className="border-[1px] border-[#9491A1] w-[100%] rounded-md placeholder:font-poppins placeholder:text-[#737791] placeholder:text-[14px] placeholder:font-[500] font-poppins text-[15px] focus:outline-none"
+                      className="border-[1px] border-[#9491A1] w-[100%] rounded-md placeholder:font-poppins placeholder:text-[#737791] placeholder:text-[16px] placeholder:font-[500] font-poppins text-[15px] focus:outline-none"
                     />
                   </div>
                   <div className="w-[50%] flex gap-[10px] flex-col">
@@ -557,7 +557,7 @@ const SavedEvents = () => {
                       type="text"
                       placeholder="Public Email"
                       style={{ padding: "17.5px 14px" }}
-                      className="border-[1px] border-[#9491A1] w-[100%] rounded-md placeholder:font-poppins placeholder:text-[#737791] placeholder:text-[14px] placeholder:font-[500] font-poppins text-[15px] focus:outline-none"
+                      className="border-[1px] border-[#9491A1] w-[100%] rounded-md placeholder:font-poppins placeholder:text-[#737791] placeholder:text-[16px] placeholder:font-[500] font-poppins text-[15px] focus:outline-none"
                     />
                   </div>
                 </div>
@@ -592,7 +592,7 @@ const SavedEvents = () => {
                     type="password"
                     placeholder="Password"
                     style={{ padding: "17.5px 14px" }}
-                    className="border-[1px] border-[#9491A1] w-[100%] rounded-md placeholder:font-poppins placeholder:text-[#737791] placeholder:text-[14px] placeholder:font-[500] font-poppins text-[15px] focus:outline-none"
+                    className="border-[1px] border-[#9491A1] w-[100%] rounded-md placeholder:font-poppins placeholder:text-[#737791] placeholder:text-[16px] placeholder:font-[500] font-poppins text-[15px] focus:outline-none"
                   />
                 </div>
                 <div className="flex w-[48.5%] justify-end mt-[10px]">

@@ -61,7 +61,7 @@ const MainPageHeader = ({ sidebarCollapsed, toggleSidebar }) => {
             type="search"
             placeholder="Search events..."
             id=""
-            className="bg-[#F9FAFB] px-4 font-poppins placeholder:font-[400] placeholder:text-[14px] placeholder:text-[#737791] focus:outline-none text-[14px] w-[100%]"
+            className="bg-[#F9FAFB] px-4 font-poppins placeholder:font-[400] placeholder:text-[16px] placeholder:text-[#737791] focus:outline-none text-[14px] w-[100%]"
           />
         </div>
         <div className="flex gap-[10px] w-[20%] items-center justify-end cursor-pointer">

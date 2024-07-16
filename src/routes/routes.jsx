@@ -22,6 +22,7 @@ import EventsDetails from "../pages/DetailPages/EventDetails";
 import HostDetails from "../pages/DetailPages/HostDetails";
 import AboutUs from "../pages/AboutUs/AboutUs";
 import Notifications from "../pages/Notifications/Notifications";
+import AccountDetails from "../components/AccountDetails/AccountDetails";
 
 const RouterComponent = () => {
   
@@ -111,6 +112,16 @@ const RouterComponent = () => {
             <ProtectedRoute allowedRole="role">
               <MainpageLayout>
                 <AccountSettings />
+              </MainpageLayout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/host-protocol/account-details"
+          element={
+            <ProtectedRoute allowedRole="role">
+              <MainpageLayout>
+                <AccountDetails />
               </MainpageLayout>
             </ProtectedRoute>
           }

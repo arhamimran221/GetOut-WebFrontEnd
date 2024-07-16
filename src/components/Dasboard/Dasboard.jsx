@@ -31,15 +31,13 @@ const Dasboard = () => {
 
   return (
     <div className="">
-      <div className="flex justify-between items-center">
-        <div className="">
-          <h2 className="font-raleway font-[600] text-[32px] leading-[80px] text-[#404580]">
-            Welcome back,Host
-          </h2>
-          <p className="text-[#828282] font-manrope font-[500] text-[16px] leading-[21.86px] mt-[-20px]">
-            Track your events and manage your account
-          </p>
-        </div>
+      <div className="">
+        <h2 className="font-raleway font-[600] text-[32px] leading-[40px] text-[#404580]">
+        Welcome back,Host
+        </h2>
+        <p className="text-[#828282] font-manrope font-[500] text-[16px] leading-[21.86px] mt-[2px]">
+        Track your events and manage your account
+        </p>
       </div>
       <div className="bg-[#FBBC05] p-[10px] rounded-[8px] flex gap-[10px] my-[20px]">
         <img src={emergency} alt="" srcset="" />

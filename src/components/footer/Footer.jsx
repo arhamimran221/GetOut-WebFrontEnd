@@ -49,7 +49,7 @@ export default function footer() {
                 <li className=" mt-[10px] mb-[6px]">
                   <NavLink
                     to="#"
-                    className="font-inter font-[400] text-[16px] leading-[21px] text-[#000]"
+                    className="font-inter font-[400] text-[16px] leading-[21px] text-[#000] hover:text-[#fff] hover:underline duration-300 ease-in-out"
                     style={{ marginTop: "20px" }}
                   >
                     Directory
@@ -58,7 +58,7 @@ export default function footer() {
                 <li className=" mt-[10px] mb-[6px]">
                   <NavLink
                     to="#"
-                    className="font-inter font-[400] text-[16px] leading-[21px] text-[#000]"
+                    className="font-inter font-[400] text-[16px] leading-[21px] text-[#000] hover:text-[#fff] hover:underline duration-300 ease-in-out"
                   >
                     Search
                   </NavLink>
@@ -66,7 +66,7 @@ export default function footer() {
                 <li className=" mt-[10px] mb-[6px]">
                   <NavLink
                     to="#"
-                    className="font-inter font-[400] text-[16px] leading-[21px] text-[#000]"
+                    className="font-inter font-[400] text-[16px] leading-[21px] text-[#000] hover:text-[#fff] hover:underline duration-300 ease-in-out"
                   >
                     About
                   </NavLink>
@@ -74,7 +74,7 @@ export default function footer() {
                 <li className=" mt-[10px] mb-[6px]">
                   <NavLink
                     to="#"
-                    className="font-inter font-[400] text-[16px] leading-[21px] text-[#000]"
+                    className="font-inter font-[400] text-[16px] leading-[21px] text-[#000] hover:text-[#fff] hover:underline duration-300 ease-in-out"
                   >
                     Pricing
                   </NavLink>
@@ -82,7 +82,7 @@ export default function footer() {
                 <li className=" mt-[10px] mb-[6px]">
                   <NavLink
                     to="/host-protocol"
-                    className="font-inter font-[400] text-[16px] leading-[21px] text-[#000]"
+                    className="font-inter font-[400] text-[16px] leading-[21px] text-[#000] hover:text-[#fff] hover:underline duration-300 ease-in-out"
                   >
                     Log In
                   </NavLink>
@@ -90,7 +90,7 @@ export default function footer() {
                 <li className=" mt-[10px] mb-[6px]">
                   <NavLink
                     to="/host-protocol"
-                    className="font-inter font-[400] text-[16px] leading-[21px] text-[#000]"
+                    className="font-inter font-[400] text-[16px] leading-[21px] text-[#000] hover:text-[#fff] hover:underline duration-300 ease-in-out"
                   >
                     Host Protocol
                   </NavLink>
@@ -111,7 +111,7 @@ export default function footer() {
                   <a
                     href="https://www.instagram.com/"
                     target="_blank"
-                    className="flex justify-center items-center mb-[20px] gap-[10px]"
+                    className="flex justify-center items-center mb-[20px] gap-[10px] hover:text-[#fff] hover:underline duration-300 ease-in-out"
                   >
                     {" "}
                     <img
@@ -126,7 +126,7 @@ export default function footer() {
                   <a
                     href="https://www.facebook.com/"
                     target="_blank"
-                    className="flex justify-center items-center mb-[20px] gap-[10px]"
+                    className="flex justify-center items-center mb-[20px] gap-[10px] hover:text-[#fff] hover:underline duration-300 ease-in-out"
                   >
                     {" "}
                     <img
@@ -141,7 +141,7 @@ export default function footer() {
                   <a
                     href="https://www.twitter.com/"
                     target="_blank"
-                    className="flex justify-center items-center mb-[20px] gap-[10px]"
+                    className="flex justify-center items-center mb-[20px] gap-[10px] hover:text-[#fff] hover:underline duration-300 ease-in-out"
                   >
                     {" "}
                     <img
@@ -156,7 +156,7 @@ export default function footer() {
                   <a
                     href="https://www.linkedln.com/"
                     target="_blank"
-                    className="flex justify-center items-center mb-[20px] gap-[10px]"
+                    className="flex justify-center items-center mb-[20px] gap-[10px] hover:text-[#fff] hover:underline duration-300 ease-in-out"
                   >
                     {" "}
                     <img
@@ -186,7 +186,7 @@ export default function footer() {
                   </div>
                   <NavLink
                     to="tel:12086964143"
-                    className="font-inter font-[400] text-[16px] leading-[21px] text-[#000]"
+                    className="font-inter font-[400] text-[16px] leading-[21px] text-[#000] hover:text-[#fff] hover:underline duration-300 ease-in-out"
                   >
                     +44 7586345200
                   </NavLink>
@@ -198,7 +198,7 @@ export default function footer() {
                   </div>
                   <NavLink
                     to="mailto:contact@event.com"
-                    className="font-inter font-[400] text-[16px] leading-[21px] text-[#000]"
+                    className="font-inter font-[400] text-[16px] leading-[21px] text-[#000] hover:text-[#fff] hover:underline duration-300 ease-in-out"
                   >
                     loic@getout.directory
                   </NavLink>
@@ -209,7 +209,7 @@ export default function footer() {
                   </div>
                   <NavLink
                     to="#"
-                    className="font-inter font-[400] text-[16px] leading-[21px] text-[#000] w-[190px]"
+                    className="font-inter font-[400] text-[16px] leading-[21px] text-[#000] w-[190px] hover:text-[#fff] hover:underline duration-300 ease-in-out"
                   >
                     +44 7586345200
                   </NavLink>
